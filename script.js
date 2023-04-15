@@ -1,47 +1,37 @@
 //complete this code
 class Person {
+  constructor(name, age) {
+    this._name = name;
+    this._age = age;
+  }
 
+  get name() {
+    return this._name;
+  }
 
-	constructor(name,age){
-		this.name=name;
-		this.age=age;
-	}
+  set age(age) {
+    if (age > 0 && age < 120) {
+      this._age = age;
+    } else {
+      console.error("Invalid age value");
+    }
+  }
 
-
-get name (){
-	return this.name;
-}
-
-	set age(age){
-		if(age>0&&age<120){
-			this.age=age;
-			
-		}
-		else{
-			console.error("invalid age");
-			
-		}
-	}
-
-	
+  get age() {
+    return this._age;
+  }
 }
 
 class Student extends Person {
-
-study(){
-	console.log(`${this.name} is studying`);
-}
-
-	
+  study() {
+    console.log(`${this.name} is studying`);
+  }
 }
 
 class Teacher extends Person {
-
-	teach(){
-		console.log(`${this.name} is teaching`);
-	}
-
-	
+  teach() {
+    console.log(`${this.name} is teaching`);
+  }
 }
 
 // Do not change the code below this line
